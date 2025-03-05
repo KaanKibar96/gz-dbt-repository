@@ -40,8 +40,14 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
-    mart:
-      +materialized: table
-      finance:
-        +schema: finance
+
+models:
+  mart:
+    - name: finance_days
+      description: daily finance data for dashboarding
+      config:
+        schema: finance
+        materialized: table
+          
+
 
